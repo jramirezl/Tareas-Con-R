@@ -1,20 +1,22 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
+  "name": "R with Conda and Jupyter",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "postCreateCommand": "echo 'Container listo con R y Conda'",
+  "forwardPorts": [8888],
   "customizations": {
-    "codespaces": {
-      "openFiles": []
-    },
     "vscode": {
       "extensions": [
+        "REditorSupport.r",
+        "Ikuyadeu.r",
         "ms-toolsai.jupyter",
         "ms-python.python"
       ]
     }
-  }
+  },
+  "features": {}
 }
